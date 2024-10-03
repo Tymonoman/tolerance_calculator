@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="panel">
+        <div id="mainCard">
+            <div class="title">
+                <p>LSD/Shroom Tolerance Calculator</p>
+            </div>
+            <div class="units-switch">
+                <div id="lyserg" class="units-btn active"> LSD </div>
+                <div id="mushy" class="units-btn"> Mushrooms </div>
+                <div class="sub-text"> (including analogs) </div>
+            </div>
+        </div>
+        <br>
+        <div class="calculator">
+            <form name="dosage_form" id="dosage_form" oninput="calculate()">
+                <label for="dose">Last dose:</label>
+                <input id="dose" type="number" min="0" step="5" name="dose"> <span class="units">μg</span>
+                <br><br>
+                <label for="desired">Desired dose:</label>
+                <input id="desired" type="number" min="0" name="desired"> <span class="units">μg</span>
+                <br><br>
+                <label for="days">Days since consumption:</label>
+                <input id="days" type="number" min="1" max="14" value="1" name="days">
+            </form>
+            <div class="result">
+                You will need a dose of
+                <div id="value"> <output id="result"></output> <span class="units">μg</span> </div>
+                to feel the same effects as your desired dose.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
