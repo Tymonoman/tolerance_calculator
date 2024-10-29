@@ -25,17 +25,17 @@
         <div class="calculator">
             <form name="dosage_form" id="dosage_form" oninput="calculate()">
                 <label for="dose">Last dose:</label>
-                <input id="dose" type="number" min="0" step="5" name="dose"> <span class="units">μg</span>
+                <input id="dose" type="number" min="0" step="5" name="dose"> <span class="units">&micro;g</span>
                 <br><br>
                 <label for="desired">Desired dose:</label>
-                <input id="desired" type="number" min="0" name="desired"> <span class="units">μg</span>
+                <input id="desired" type="number" min="0" name="desired"> <span class="units">&micro;g</span>
                 <br><br>
                 <label for="days">Days since consumption:</label>
                 <input id="days" type="number" min="1" max="14" value="1" name="days">
             </form>
             <div class="result">
                 You will need a dose of
-                <div id="value"> <output id="result"></output> <span class="units">μg</span> </div>
+                <div id="value"> <output id="result"></output> <span class="units">&micro;g</span> </div>
                 to feel the same effects as your desired dose.
             </div>
         </div>
