@@ -21,15 +21,18 @@
                 <div class="sub-text"> (including analogs) </div>
             </div>
         </div>
-        <br>
         <div class="calculator">
             <form name="dosage_form" id="dosage_form" oninput="calculate()">
                 <label for="dose">Last dose:</label>
-                <input id="dose" type="number" min="0" step="5" name="dose"> <span class="units">&micro;g</span>
-                <br><br>
+                <div class="input-with-unit">
+                    <input id="dose" type="number" min="0" step="5" name="dose">
+                    <span class="unit-overlay" data-unit="μg"></span>
+                </div>
                 <label for="desired">Desired dose:</label>
-                <input id="desired" type="number" min="0" name="desired"> <span class="units">&micro;g</span>
-                <br><br>
+                <div class="input-with-unit">
+                    <input id="desired" type="number" min="0" name="desired">
+                    <span class="unit-overlay" data-unit="μg"></span>
+                </div>
                 <label for="days">Days since consumption:</label>
                 <input id="days" type="number" min="1" max="14" value="1" name="days">
             </form>
