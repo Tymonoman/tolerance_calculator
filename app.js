@@ -4,16 +4,18 @@ $(document).ready(function() {
         $(this).toggleClass("active");
     
         if ($("#lyserg").hasClass("active")) {
-        $(".units").text("μg");
-        $("#dose").attr("step", "5");
+            $(".units").text("μg");
+            $(".unit-overlay").attr("data-unit", "μg");
+            $("#dose").attr("step", "5");
         } else if ($("#mushy").hasClass("active")) {
-        $(".units").text("g");
-        $("#dose").attr("step", "1");
+            $(".units").text("g");
+            $(".unit-overlay").attr("data-unit", "g");
+            $("#dose").attr("step", "1");
         }
     
     });
     
-    });
+});
     function calculate() {
     var x1 = document.getElementById("dose").value;
     var x2 = document.getElementById("desired").value;
