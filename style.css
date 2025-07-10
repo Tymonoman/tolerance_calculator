@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 
 :root {
     --bg: #1f1b1a; /* Darker background color */
@@ -15,7 +15,7 @@ html {
 
 body {
     background-color: var(--bg);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -24,7 +24,7 @@ body {
     align-items: center;
     min-height: 100vh;
     color: var(--text);
-    overflow: auto; /* Allow scrolling */
+    overflow: hidden; /* Prevent scrollbar */
 }
 
 .panel {
@@ -48,8 +48,32 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 8px rgba(111, 118, 146, 0.4);
+    text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
     transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Enhanced shadows for consistent styling */
+input[type="number"] {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.panel {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.units-btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.units-btn:hover, .units-btn.active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .units-switch {
@@ -57,6 +81,7 @@ body {
     justify-content: center;
     margin-bottom: 20px;
     position: relative;
+    gap: 15px; /* Add space between the buttons */
 }
 
 .units-btn {
@@ -176,6 +201,19 @@ form {
     text-align: left;
     padding: 10px;
     height: 100%;
+}
+
+/* Label styling to display above inputs */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+form label:first-of-type {
+    margin-top: 0; /* Remove top margin from first label */
 }
 
 a,
@@ -340,4 +378,48 @@ footer {
     .unit {
         margin-left: 10px;
     }
+}
+
+/* Input with unit styling */
+.input-with-unit {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-with-unit input {
+    padding-right: 2.5rem; /* Add padding to make room for unit text */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.unit-overlay {
+    position: absolute;
+    right: 0.625rem; /* 10px */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--description);
+    font-size: 0.875rem;
+    font-weight: 500;
+    pointer-events: none; /* Prevent unit text from interfering with input */
+    z-index: 1;
+}
+
+.unit-overlay::after {
+    content: attr(data-unit);
+}
+
+/* Days input field styling */
+#days {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* Reduce spacing from br tags in form */
+form br {
+    line-height: 0.5;
+    margin: 5px 0;
 }
